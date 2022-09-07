@@ -26,7 +26,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">remaCor</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.9</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.10</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -51,7 +51,7 @@
 
       <ul class="navbar-nav">
 <li class="nav-item">
-  <a class="external-link nav-link" href="https://github.com/GabrielHoffman/remaCor/" aria-label="github">
+  <a class="external-link nav-link" href="https://github.com/DiseaseNeurogenomics/remaCor/" aria-label="github">
     <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
@@ -72,7 +72,7 @@
                         <h4 data-toc-skip class="author"><a href="http://gabrielhoffman.github.io" class="external-link">Gabriel Hoffman</a></h4>
             <address class="author_afil">
       <p>Icahn School of Medicine at Mount Sinai, New York</p>
-<br><small class="dont-index">Source: <a href="https://github.com/GabrielHoffman/remaCor/blob/HEAD/vignettes/remaCor.Rmd" class="external-link"><code>vignettes/remaCor.Rmd</code></a></small>
+<br><small class="dont-index">Source: <a href="https://github.com/DiseaseNeurogenomics/remaCor/blob/HEAD/vignettes/remaCor.Rmd" class="external-link"><code>vignettes/remaCor.Rmd</code></a></small>
       <div class="d-none name"><code>remaCor.Rmd</code></div>
     </address>
 </div>
@@ -110,7 +110,7 @@ text-align: justify}
 <h4 id="examples">Examples<a class="anchor" aria-label="anchor" href="#examples"></a>
 </h4>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/GabrielHoffman/remaCor" class="external-link">remaCor</a></span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://DiseaseNeurogenomics.github.io/remaCor" class="external-link">remaCor</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://www.metafor-project.org" class="external-link">metafor</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Generate effects</span></span>
@@ -128,16 +128,16 @@ text-align: justify}
 <pre><code><span><span class="co">## </span></span>
 <span><span class="co">## Fixed-Effects Model (k = 4)</span></span>
 <span><span class="co">## </span></span>
-<span><span class="co">## I^2 (total heterogeneity / total variability):   98.66%</span></span>
-<span><span class="co">## H^2 (total variability / sampling variability):  74.61</span></span>
+<span><span class="co">## I^2 (total heterogeneity / total variability):   98.72%</span></span>
+<span><span class="co">## H^2 (total variability / sampling variability):  77.93</span></span>
 <span><span class="co">## </span></span>
 <span><span class="co">## Test for Heterogeneity:</span></span>
-<span><span class="co">## Q(df = 3) = 223.8394, p-val &lt; .0001</span></span>
+<span><span class="co">## Q(df = 3) = 233.8035, p-val &lt; .0001</span></span>
 <span><span class="co">## </span></span>
 <span><span class="co">## Model Results:</span></span>
 <span><span class="co">## </span></span>
-<span><span class="co">## estimate      se    zval    pval   ci.lb   ci.ub      </span></span>
-<span><span class="co">##   0.4110  0.0500  8.2190  &lt;.0001  0.3130  0.5089  *** </span></span>
+<span><span class="co">## estimate      se     zval    pval    ci.lb    ci.ub      </span></span>
+<span><span class="co">##  -0.3686  0.0500  -7.3716  &lt;.0001  -0.4666  -0.2706  *** </span></span>
 <span><span class="co">## </span></span>
 <span><span class="co">## ---</span></span>
 <span><span class="co">## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</span></span></code></pre>
@@ -148,18 +148,18 @@ text-align: justify}
 <pre><code><span><span class="co">## </span></span>
 <span><span class="co">## Random-Effects Model (k = 4; tau^2 estimator: REML)</span></span>
 <span><span class="co">## </span></span>
-<span><span class="co">## tau^2 (estimated amount of total heterogeneity): 0.7361 (SE = 0.6092)</span></span>
-<span><span class="co">## tau (square root of estimated tau^2 value):      0.8580</span></span>
-<span><span class="co">## I^2 (total heterogeneity / total variability):   98.66%</span></span>
-<span><span class="co">## H^2 (total variability / sampling variability):  74.61</span></span>
+<span><span class="co">## tau^2 (estimated amount of total heterogeneity): 0.7693 (SE = 0.6363)</span></span>
+<span><span class="co">## tau (square root of estimated tau^2 value):      0.8771</span></span>
+<span><span class="co">## I^2 (total heterogeneity / total variability):   98.72%</span></span>
+<span><span class="co">## H^2 (total variability / sampling variability):  77.93</span></span>
 <span><span class="co">## </span></span>
 <span><span class="co">## Test for Heterogeneity:</span></span>
-<span><span class="co">## Q(df = 3) = 223.8394, p-val &lt; .0001</span></span>
+<span><span class="co">## Q(df = 3) = 233.8035, p-val &lt; .0001</span></span>
 <span><span class="co">## </span></span>
 <span><span class="co">## Model Results:</span></span>
 <span><span class="co">## </span></span>
-<span><span class="co">## estimate      se    zval    pval    ci.lb   ci.ub    </span></span>
-<span><span class="co">##   0.4110  0.4319  0.9515  0.3413  -0.4355  1.2574    </span></span>
+<span><span class="co">## estimate      se     zval    pval    ci.lb   ci.ub    </span></span>
+<span><span class="co">##  -0.3686  0.4414  -0.8350  0.4037  -1.2337  0.4966    </span></span>
 <span><span class="co">## </span></span>
 <span><span class="co">## ---</span></span>
 <span><span class="co">## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</span></span></code></pre>
@@ -167,26 +167,26 @@ text-align: justify}
 <code class="sourceCode R"><span><span class="co"># Run fixed effects meta-analysis, assume identity correlation  </span></span>
 <span><span class="co"># Use Lin-Sullivan method</span></span>
 <span><span class="fu"><a href="../reference/LS.html">LS</a></span><span class="op">(</span> <span class="va">beta</span>, <span class="va">stders</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">##        beta   se            p</span></span>
-<span><span class="co">## 1 0.4109513 0.05 2.051628e-16</span></span></code></pre>
+<pre><code><span><span class="co">##         beta   se            p</span></span>
+<span><span class="co">## 1 -0.3685816 0.05 1.685513e-13</span></span></code></pre>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Run fixed effects meta-analysis, accounting for correlation  </span></span>
 <span><span class="co"># Use Lin-Sullivan method</span></span>
 <span><span class="fu"><a href="../reference/LS.html">LS</a></span><span class="op">(</span> <span class="va">beta</span>, <span class="va">stders</span>, <span class="va">Sigma</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">##        beta         se            p</span></span>
-<span><span class="co">## 1 0.3432716 0.05768756 2.672751e-09</span></span></code></pre>
+<pre><code><span><span class="co">##         beta         se           p</span></span>
+<span><span class="co">## 1 -0.2863765 0.05512159 2.04324e-07</span></span></code></pre>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Run random effects meta-analysis, assume identity correlation  </span></span>
 <span><span class="fu"><a href="../reference/RE2C.html">RE2C</a></span><span class="op">(</span> <span class="va">beta</span>, <span class="va">stders</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">##      stat1    stat2        RE2Cp RE2Cp.twoStep       QE          QEp      Isq</span></span>
-<span><span class="co">## 1 67.55239 203.7409 3.644909e-60            NA 223.8394 2.969778e-48 98.65975</span></span></code></pre>
+<span><span class="co">## 1 54.34096 213.5308 2.018313e-59            NA 233.8035 2.081701e-50 98.71687</span></span></code></pre>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Run random effects meta-analysis, accounting for correlation </span></span>
 <span><span class="fu"><a href="../reference/RE2C.html">RE2C</a></span><span class="op">(</span> <span class="va">beta</span>, <span class="va">stders</span>, <span class="va">Sigma</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">##      stat1    stat2        RE2Cp RE2Cp.twoStep QE QEp Isq</span></span>
-<span><span class="co">## 1 35.40881 284.3521 1.218189e-70            NA NA  NA  NA</span></span></code></pre>
-<pre><code><span><span class="co">##      stat1    stat2        RE2Cp RE2Cp.twoStep QE QEp Isq</span></span>
-<span><span class="co">## 1 35.40881 284.3521 1.218189e-70            NA NA  NA  NA</span></span></code></pre>
+<pre><code><span><span class="co">##      stat1    stat2         RE2Cp RE2Cp.twoStep QE QEp Isq</span></span>
+<span><span class="co">## 1 26.99177 473.9152 5.422456e-110            NA NA  NA  NA</span></span></code></pre>
+<pre><code><span><span class="co">##      stat1    stat2         RE2Cp RE2Cp.twoStep QE QEp Isq</span></span>
+<span><span class="co">## 1 26.99177 473.9152 5.422456e-110            NA NA  NA  NA</span></span></code></pre>
 </div>
 <div class="section level2">
 <h2 id="session-info">Session info<a class="anchor" aria-label="anchor" href="#session-info"></a>
@@ -213,7 +213,7 @@ text-align: justify}
 <span><span class="co">## </span></span>
 <span><span class="co">## other attached packages:</span></span>
 <span><span class="co">##  [1] mvtnorm_1.1-3           metafor_3.8-1           metadat_1.2-0          </span></span>
-<span><span class="co">##  [4] Matrix_1.4-1            remaCor_0.0.9           reshape2_1.4.4         </span></span>
+<span><span class="co">##  [4] Matrix_1.4-1            remaCor_0.0.10          reshape2_1.4.4         </span></span>
 <span><span class="co">##  [7] ggplot2_3.3.6           clusterGeneration_1.3.7 MASS_7.3-57            </span></span>
 <span><span class="co">## [10] RUnit_0.4.32           </span></span>
 <span><span class="co">## </span></span>
