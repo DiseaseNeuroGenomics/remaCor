@@ -26,7 +26,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">remaCor</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.10</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.11</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -71,7 +71,8 @@
       <img src="" class="logo" alt=""><h1>Random effects meta-analysis for correlated test statistics</h1>
                         <h4 data-toc-skip class="author"><a href="http://gabrielhoffman.github.io" class="external-link">Gabriel Hoffman</a></h4>
             <address class="author_afil">
-      <p>Icahn School of Medicine at Mount Sinai, New York</p>
+      <p>Icahn School of Medicine at Mount Sinai, New
+York</p>
 <br><small class="dont-index">Source: <a href="https://github.com/DiseaseNeurogenomics/remaCor/blob/HEAD/vignettes/remaCor.Rmd" class="external-link"><code>vignettes/remaCor.Rmd</code></a></small>
       <div class="d-none name"><code>remaCor.Rmd</code></div>
     </address>
@@ -83,26 +84,49 @@
 body {
 text-align: justify}
 </style>
-<p>Standard approaches to meta-analysis assumes that effect sizes are statistically independent. Here we provide methods for fixed and random effects meta-analysis when the correlation between effect sizes are known.</p>
+<p>Standard approaches to meta-analysis assumes that effect sizes are
+statistically independent. Here we provide methods for fixed and random
+effects meta-analysis when the correlation between effect sizes are
+known.</p>
 <div class="section level4">
 <h4 id="fixed-effects-meta-analysis">Fixed effects meta-analysis<a class="anchor" aria-label="anchor" href="#fixed-effects-meta-analysis"></a>
 </h4>
-<p><code><a href="../reference/LS.html">LS()</a></code> implements fixed effect meta-analysis for correlated test statistics using method of <span class="citation">Lin and Sullivan (2009)</span>. By default, correlation is set to identity matrix to for independent test statistics.</p>
+<p><code><a href="../reference/LS.html">LS()</a></code> implements fixed effect meta-analysis for
+correlated test statistics using method of <span class="citation">Lin
+and Sullivan (2009)</span>. By default, correlation is set to identity
+matrix to for independent test statistics.</p>
 </div>
 <div class="section level4">
 <h4 id="random-effects-meta-analysis">Random effects meta-analysis<a class="anchor" aria-label="anchor" href="#random-effects-meta-analysis"></a>
 </h4>
-<p><code><a href="../reference/RE2C.html">RE2C()</a></code> implements random effect meta-analysis for correlated test statistics that jointly tests deviation of the mean from zero as well as effect size heterogenity. This method uses the RE2 method of <span class="citation">Han and Eskin (2011)</span>, or RE2 for correlated test statistics from <span class="citation">Han et al. (2016)</span>. By default, correlation is set to identity matrix to for independent test statistics. (In addition, this function computes the two step RE2C method of <span class="citation">Lee, Eskin, and Han (2017)</span> to further test for heterogenity in effect size after applying a fixed effect test.)</p>
+<p><code><a href="../reference/RE2C.html">RE2C()</a></code> implements random effect meta-analysis for
+correlated test statistics that jointly tests deviation of the mean from
+zero as well as effect size heterogenity. This method uses the RE2
+method of <span class="citation">Han and Eskin (2011)</span>, or RE2 for
+correlated test statistics from <span class="citation">Han et al.
+(2016)</span>. By default, correlation is set to identity matrix to for
+independent test statistics. (In addition, this function computes the
+two step RE2C method of <span class="citation">Lee, Eskin, and Han
+(2017)</span> to further test for heterogenity in effect size after
+applying a fixed effect test.)</p>
 <ul>
 <li><p><code>stat1</code>: statistic testing effect mean</p></li>
-<li><p><code>stat2</code>: statistic testing effect heterogeneity</p></li>
-<li><p><code>RE2Cp</code>: RE2 p-value accounting for correlelation between tests. (This is the p-value appropriate for most questions)</p></li>
-<li><p><code>RE2Cp.twoStep</code>: two step RE2C test after fixed effect test. Only evaluated if <code>twoStep==TRUE</code>. (not typically used)</p></li>
-<li><p><code>QE</code>: test statistic for the test of (residual) heterogeneity</p></li>
-<li><p><code>QEp</code>: p-value for the test of (residual) heterogeneity</p></li>
+<li><p><code>stat2</code>: statistic testing effect
+heterogeneity</p></li>
+<li><p><code>RE2Cp</code>: RE2 p-value accounting for correlelation
+between tests. (This is the p-value appropriate for most
+questions)</p></li>
+<li><p><code>RE2Cp.twoStep</code>: two step RE2C test after fixed effect
+test. Only evaluated if <code>twoStep==TRUE</code>. (not typically
+used)</p></li>
+<li><p><code>QE</code>: test statistic for the test of (residual)
+heterogeneity</p></li>
+<li><p><code>QEp</code>: p-value for the test of (residual)
+heterogeneity</p></li>
 <li>
 <p><code>Isq</code>: I^2 statistic</p>
-<p><code>QE</code>, <code>QEp</code> and <code>Isq</code> are only evaluted if correlation is diagonal</p>
+<p><code>QE</code>, <code>QEp</code> and <code>Isq</code> are only
+evaluted if correlation is diagonal</p>
 </li>
 </ul>
 </div>
@@ -110,7 +134,7 @@ text-align: justify}
 <h4 id="examples">Examples<a class="anchor" aria-label="anchor" href="#examples"></a>
 </h4>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://DiseaseNeurogenomics.github.io/remaCor" class="external-link">remaCor</a></span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://diseaseneurogenomics.github.io/remaCor/" class="external-link">remaCor</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://www.metafor-project.org" class="external-link">metafor</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Generate effects</span></span>
@@ -128,16 +152,16 @@ text-align: justify}
 <pre><code><span><span class="co">## </span></span>
 <span><span class="co">## Fixed-Effects Model (k = 4)</span></span>
 <span><span class="co">## </span></span>
-<span><span class="co">## I^2 (total heterogeneity / total variability):   98.72%</span></span>
-<span><span class="co">## H^2 (total variability / sampling variability):  77.93</span></span>
+<span><span class="co">## I^2 (total heterogeneity / total variability):   99.54%</span></span>
+<span><span class="co">## H^2 (total variability / sampling variability):  218.44</span></span>
 <span><span class="co">## </span></span>
 <span><span class="co">## Test for Heterogeneity:</span></span>
-<span><span class="co">## Q(df = 3) = 233.8035, p-val &lt; .0001</span></span>
+<span><span class="co">## Q(df = 3) = 655.3238, p-val &lt; .0001</span></span>
 <span><span class="co">## </span></span>
 <span><span class="co">## Model Results:</span></span>
 <span><span class="co">## </span></span>
-<span><span class="co">## estimate      se     zval    pval    ci.lb    ci.ub      </span></span>
-<span><span class="co">##  -0.3686  0.0500  -7.3716  &lt;.0001  -0.4666  -0.2706  *** </span></span>
+<span><span class="co">## estimate      se     zval    pval   ci.lb   ci.ub      </span></span>
+<span><span class="co">##   0.9422  0.0500  18.8449  &lt;.0001  0.8442  1.0402  *** </span></span>
 <span><span class="co">## </span></span>
 <span><span class="co">## ---</span></span>
 <span><span class="co">## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</span></span></code></pre>
@@ -148,18 +172,18 @@ text-align: justify}
 <pre><code><span><span class="co">## </span></span>
 <span><span class="co">## Random-Effects Model (k = 4; tau^2 estimator: REML)</span></span>
 <span><span class="co">## </span></span>
-<span><span class="co">## tau^2 (estimated amount of total heterogeneity): 0.7693 (SE = 0.6363)</span></span>
-<span><span class="co">## tau (square root of estimated tau^2 value):      0.8771</span></span>
-<span><span class="co">## I^2 (total heterogeneity / total variability):   98.72%</span></span>
-<span><span class="co">## H^2 (total variability / sampling variability):  77.93</span></span>
+<span><span class="co">## tau^2 (estimated amount of total heterogeneity): 2.1744 (SE = 1.7836)</span></span>
+<span><span class="co">## tau (square root of estimated tau^2 value):      1.4746</span></span>
+<span><span class="co">## I^2 (total heterogeneity / total variability):   99.54%</span></span>
+<span><span class="co">## H^2 (total variability / sampling variability):  218.44</span></span>
 <span><span class="co">## </span></span>
 <span><span class="co">## Test for Heterogeneity:</span></span>
-<span><span class="co">## Q(df = 3) = 233.8035, p-val &lt; .0001</span></span>
+<span><span class="co">## Q(df = 3) = 655.3238, p-val &lt; .0001</span></span>
 <span><span class="co">## </span></span>
 <span><span class="co">## Model Results:</span></span>
 <span><span class="co">## </span></span>
-<span><span class="co">## estimate      se     zval    pval    ci.lb   ci.ub    </span></span>
-<span><span class="co">##  -0.3686  0.4414  -0.8350  0.4037  -1.2337  0.4966    </span></span>
+<span><span class="co">## estimate      se    zval    pval    ci.lb   ci.ub    </span></span>
+<span><span class="co">##   0.9422  0.7390  1.2750  0.2023  -0.5061  2.3906    </span></span>
 <span><span class="co">## </span></span>
 <span><span class="co">## ---</span></span>
 <span><span class="co">## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</span></span></code></pre>
@@ -167,26 +191,26 @@ text-align: justify}
 <code class="sourceCode R"><span><span class="co"># Run fixed effects meta-analysis, assume identity correlation  </span></span>
 <span><span class="co"># Use Lin-Sullivan method</span></span>
 <span><span class="fu"><a href="../reference/LS.html">LS</a></span><span class="op">(</span> <span class="va">beta</span>, <span class="va">stders</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">##         beta   se            p</span></span>
-<span><span class="co">## 1 -0.3685816 0.05 1.685513e-13</span></span></code></pre>
+<pre><code><span><span class="co">##        beta   se            p</span></span>
+<span><span class="co">## 1 0.9422437 0.05 3.237384e-79</span></span></code></pre>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Run fixed effects meta-analysis, accounting for correlation  </span></span>
 <span><span class="co"># Use Lin-Sullivan method</span></span>
 <span><span class="fu"><a href="../reference/LS.html">LS</a></span><span class="op">(</span> <span class="va">beta</span>, <span class="va">stders</span>, <span class="va">Sigma</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">##         beta         se           p</span></span>
-<span><span class="co">## 1 -0.2863765 0.05512159 2.04324e-07</span></span></code></pre>
+<pre><code><span><span class="co">##        beta         se            p</span></span>
+<span><span class="co">## 1 0.8558202 0.04756028 2.154186e-72</span></span></code></pre>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Run random effects meta-analysis, assume identity correlation  </span></span>
 <span><span class="fu"><a href="../reference/RE2C.html">RE2C</a></span><span class="op">(</span> <span class="va">beta</span>, <span class="va">stders</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">##      stat1    stat2        RE2Cp RE2Cp.twoStep       QE          QEp      Isq</span></span>
-<span><span class="co">## 1 54.34096 213.5308 2.018313e-59            NA 233.8035 2.081701e-50 98.71687</span></span></code></pre>
+<pre><code><span><span class="co">##      stat1    stat2         RE2Cp RE2Cp.twoStep       QE           QEp      Isq</span></span>
+<span><span class="co">## 1 355.1293 630.9284 2.123639e-215            NA 655.3238 1.021138e-141 99.54221</span></span></code></pre>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Run random effects meta-analysis, accounting for correlation </span></span>
 <span><span class="fu"><a href="../reference/RE2C.html">RE2C</a></span><span class="op">(</span> <span class="va">beta</span>, <span class="va">stders</span>, <span class="va">Sigma</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">##      stat1    stat2         RE2Cp RE2Cp.twoStep QE QEp Isq</span></span>
-<span><span class="co">## 1 26.99177 473.9152 5.422456e-110            NA NA  NA  NA</span></span></code></pre>
+<span><span class="co">## 1 323.7996 504.2267 4.846266e-181            NA NA  NA  NA</span></span></code></pre>
 <pre><code><span><span class="co">##      stat1    stat2         RE2Cp RE2Cp.twoStep QE QEp Isq</span></span>
-<span><span class="co">## 1 26.99177 473.9152 5.422456e-110            NA NA  NA  NA</span></span></code></pre>
+<span><span class="co">## 1 323.7996 504.2267 4.846266e-181            NA NA  NA  NA</span></span></code></pre>
 </div>
 <div class="section level2">
 <h2 id="session-info">Session info<a class="anchor" aria-label="anchor" href="#session-info"></a>
@@ -213,39 +237,51 @@ text-align: justify}
 <span><span class="co">## </span></span>
 <span><span class="co">## other attached packages:</span></span>
 <span><span class="co">##  [1] mvtnorm_1.1-3           metafor_3.8-1           metadat_1.2-0          </span></span>
-<span><span class="co">##  [4] Matrix_1.4-1            remaCor_0.0.10          reshape2_1.4.4         </span></span>
+<span><span class="co">##  [4] Matrix_1.4-1            remaCor_0.0.11          reshape2_1.4.4         </span></span>
 <span><span class="co">##  [7] ggplot2_3.3.6           clusterGeneration_1.3.7 MASS_7.3-57            </span></span>
 <span><span class="co">## [10] RUnit_0.4.32           </span></span>
 <span><span class="co">## </span></span>
 <span><span class="co">## loaded via a namespace (and not attached):</span></span>
-<span><span class="co">##  [1] xfun_0.32         bslib_0.4.0       purrr_0.3.4       lattice_0.20-45  </span></span>
-<span><span class="co">##  [5] colorspace_2.0-3  vctrs_0.4.1       htmltools_0.5.3   yaml_2.3.5       </span></span>
-<span><span class="co">##  [9] utf8_1.2.2        rlang_1.0.5       pkgdown_2.0.6     jquerylib_0.1.4  </span></span>
-<span><span class="co">## [13] pillar_1.8.1      glue_1.6.2        withr_2.5.0       lifecycle_1.0.1  </span></span>
+<span><span class="co">##  [1] xfun_0.34         bslib_0.4.0       purrr_0.3.5       lattice_0.20-45  </span></span>
+<span><span class="co">##  [5] colorspace_2.0-3  vctrs_0.5.0       htmltools_0.5.3   yaml_2.3.6       </span></span>
+<span><span class="co">##  [9] utf8_1.2.2        rlang_1.0.6       pkgdown_2.0.6     jquerylib_0.1.4  </span></span>
+<span><span class="co">## [13] pillar_1.8.1      glue_1.6.2        withr_2.5.0       lifecycle_1.0.3  </span></span>
 <span><span class="co">## [17] plyr_1.8.7        stringr_1.4.1     munsell_0.5.0     gtable_0.3.1     </span></span>
-<span><span class="co">## [21] ragg_1.2.2        codetools_0.2-18  memoise_2.0.1     evaluate_0.16    </span></span>
+<span><span class="co">## [21] ragg_1.2.4        codetools_0.2-18  memoise_2.0.1     evaluate_0.17    </span></span>
 <span><span class="co">## [25] knitr_1.40        fastmap_1.1.0     fansi_1.0.3       Rcpp_1.0.9       </span></span>
-<span><span class="co">## [29] scales_1.2.1      cachem_1.0.6      desc_1.4.1        jsonlite_1.8.0   </span></span>
-<span><span class="co">## [33] systemfonts_1.0.4 fs_1.5.2          textshaping_0.3.6 digest_0.6.29    </span></span>
+<span><span class="co">## [29] scales_1.2.1      cachem_1.0.6      desc_1.4.2        jsonlite_1.8.3   </span></span>
+<span><span class="co">## [33] systemfonts_1.0.4 fs_1.5.2          textshaping_0.3.6 digest_0.6.30    </span></span>
 <span><span class="co">## [37] stringi_1.7.8     mathjaxr_1.6-0    rbibutils_2.2.9   rprojroot_2.0.3  </span></span>
-<span><span class="co">## [41] Rdpack_2.4        cli_3.3.0         tools_4.2.1       magrittr_2.0.3   </span></span>
-<span><span class="co">## [45] sass_0.4.2        tibble_3.1.8      pkgconfig_2.0.3   rmarkdown_2.16   </span></span>
+<span><span class="co">## [41] Rdpack_2.4        cli_3.4.1         tools_4.2.1       magrittr_2.0.3   </span></span>
+<span><span class="co">## [45] sass_0.4.2        tibble_3.1.8      pkgconfig_2.0.3   rmarkdown_2.17   </span></span>
 <span><span class="co">## [49] R6_2.5.1          nlme_3.1-157      compiler_4.2.1</span></span></code></pre>
 </details><div class="section level3">
 <h3 class="unnumbered" id="references">References<a class="anchor" aria-label="anchor" href="#references"></a>
 </h3>
 <div id="refs" class="references csl-bib-body hanging-indent">
 <div id="ref-han2016general" class="csl-entry">
-Han, Buhm, Dat Duong, Jae Hoon Sul, Paul IW de Bakker, Eleazar Eskin, and Soumya Raychaudhuri. 2016. <span>“A General Framework for Meta-Analyzing Dependent Studies with Overlapping Subjects in Association Mapping.”</span> <em>Human Molecular Genetics</em> 25 (9): 1857–66. <a href="https://doi.org/10.1093/hmg/ddw049" class="external-link">https://doi.org/10.1093/hmg/ddw049</a>.
+Han, Buhm, Dat Duong, Jae Hoon Sul, Paul IW de Bakker, Eleazar Eskin,
+and Soumya Raychaudhuri. 2016. <span>“A General Framework for
+Meta-Analyzing Dependent Studies with Overlapping Subjects in
+Association Mapping.”</span> <em>Human Molecular Genetics</em> 25 (9):
+1857–66. <a href="https://doi.org/10.1093/hmg/ddw049" class="external-link">https://doi.org/10.1093/hmg/ddw049</a>.
 </div>
 <div id="ref-han2011random" class="csl-entry">
-Han, Buhm, and Eleazar Eskin. 2011. <span>“Random-Effects Model Aimed at Discovering Associations in Meta-Analysis of Genome-Wide Association Studies.”</span> <em>The American Journal of Human Genetics</em> 88 (5): 586–98. <a href="https://doi.org/10.1016/j.ajhg.2011.04.014" class="external-link">https://doi.org/10.1016/j.ajhg.2011.04.014</a>.
+Han, Buhm, and Eleazar Eskin. 2011. <span>“Random-Effects Model Aimed at
+Discovering Associations in Meta-Analysis of Genome-Wide Association
+Studies.”</span> <em>The American Journal of Human Genetics</em> 88 (5):
+586–98. <a href="https://doi.org/10.1016/j.ajhg.2011.04.014" class="external-link">https://doi.org/10.1016/j.ajhg.2011.04.014</a>.
 </div>
 <div id="ref-lee2017increasing" class="csl-entry">
-Lee, CH, Eleazar Eskin, and Buhm Han. 2017. <span>“Increasing the Power of Meta-Analysis of Genome-Wide Association Studies to Detect Heterogeneous Effects.”</span> <em>Bioinformatics</em> 33 (14): i379–88. <a href="https://doi.org/10.1093/bioinformatics/btx242" class="external-link">https://doi.org/10.1093/bioinformatics/btx242</a>.
+Lee, CH, Eleazar Eskin, and Buhm Han. 2017. <span>“Increasing the Power
+of Meta-Analysis of Genome-Wide Association Studies to Detect
+Heterogeneous Effects.”</span> <em>Bioinformatics</em> 33 (14): i379–88.
+<a href="https://doi.org/10.1093/bioinformatics/btx242" class="external-link">https://doi.org/10.1093/bioinformatics/btx242</a>.
 </div>
 <div id="ref-lin2009meta" class="csl-entry">
-Lin, Dan-Yu, and Patrick F Sullivan. 2009. <span>“Meta-Analysis of Genome-Wide Association Studies with Overlapping Subjects.”</span> <em>The American Journal of Human Genetics</em> 85 (6): 862–72. <a href="https://doi.org/10.1016/j.ajhg.2009.11.001" class="external-link">https://doi.org/10.1016/j.ajhg.2009.11.001</a>.
+Lin, Dan-Yu, and Patrick F Sullivan. 2009. <span>“Meta-Analysis of
+Genome-Wide Association Studies with Overlapping Subjects.”</span>
+<em>The American Journal of Human Genetics</em> 85 (6): 862–72. <a href="https://doi.org/10.1016/j.ajhg.2009.11.001" class="external-link">https://doi.org/10.1016/j.ajhg.2009.11.001</a>.
 </div>
 </div>
 </div>
