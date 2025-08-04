@@ -81,10 +81,14 @@ get_stat_samples3 = function(V, nu, n.mc.samples, seed){
 	# estimate gamma parameters
 	fit.g = egamma(stats)
 
+	p.empirical = (1 + sum(stats > LS.stat)) / (length(stats) + 1)
+
 	# compute p-value
-	pgamma(LS.stat, 
+	p.gamma = pgamma(LS.stat, 
 		shape = fit.g$parameters[1], 
 		scale=fit.g$parameters[2], lower.tail=FALSE)
+
+	data.frame(p.empirical = p.empirical, p.gamma = p.gamma)
 }
 
 
@@ -98,6 +102,7 @@ get_stat_samples3 = function(V, nu, n.mc.samples, seed){
 #' @param nu degrees of freedom
 #' @param n.mc.samples number of Monte Carlo samples
 #' @param seed random seed so results are reproducable
+#' @param useGamma if \code{TRUE}, use gamma approximation to fit empirical distribution of test statistics and compute p-value.  if \code{FALSE}, report p-value as \code{(1 + sum(obs > stat)) / (length(stat)+1)}.  Using \code{TRUE} allows computation of small p-values with fewer Monte Carlo samples. 
 #' 
 #' @details The theoretical null for the Lin-Sullivan statistic for fixed effects meta-analysis is chisq when the regression coefficients are estimated from a large sample size. But for finite sample size, this null distribution is not well characterized. In this case, we are not aware of a closed from cumulative distribution function.  Instead we draw covariance matrices from a Wishart distribution, sample coefficients from a multivariate normal with this covariance, and then compute the Lin-Sullivan statistic.  A gamma distribution is then fit to these  draws from the null distribution and a p-value is computed from the cumulative distribution function of this gamma.
 #'
@@ -144,7 +149,7 @@ get_stat_samples3 = function(V, nu, n.mc.samples, seed){
 #' LS.empirical(df$beta, df$se, C, nu=n-2)
 #' @export
 #' @seealso \code{LS()}
-LS.empirical = function(beta, stders, cor = diag(1, length(beta)), nu, n.mc.samples=1e4, seed=1){
+LS.empirical = function(beta, stders, cor = diag(1, length(beta)), nu, n.mc.samples=1e4, seed=1, useGamma=TRUE){
 
 	# compute Lin-Sullivan test-statistic
 	res = LS(beta, stders, cor)
@@ -153,8 +158,9 @@ LS.empirical = function(beta, stders, cor = diag(1, length(beta)), nu, n.mc.samp
 
 	# Compute empirical p-value using a gamma fit to 
 	# Monte Carlo samples from the null distribution
-	res$p = .LS_empirical_pvalue(with(res, (beta/se)^2), V, nu, n.mc.samples, seed )
+	res2 = .LS_empirical_pvalue(with(res, (beta/se)^2), V, nu, n.mc.samples, seed )
 
+	res$p = ifelse(useGamma, res2$p.gamma, res2$p.empirical)
 	res
 }
 

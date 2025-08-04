@@ -10,7 +10,8 @@ LS.empirical(
   cor = diag(1, length(beta)),
   nu,
   n.mc.samples = 10000,
-  seed = 1
+  seed = 1,
+  useGamma = TRUE
 )
 }
 \arguments{
@@ -25,6 +26,8 @@ LS.empirical(
 \item{n.mc.samples}{number of Monte Carlo samples}
 
 \item{seed}{random seed so results are reproducable}
+
+\item{useGamma}{if \code{TRUE}, use gamma approximation to fit empirical distribution of test statistics and compute p-value.  if \code{FALSE}, report p-value as \code{(1 + sum(obs > stat)) / (length(stat)+1)}.  Using \code{TRUE} allows computation of small p-values with fewer Monte Carlo samples.}
 }
 \description{
 Fixed effect meta-analysis for correlated test statistics using the Lin-Sullivan method using Monte Carlo draws from the null distribution to compute the p-value.

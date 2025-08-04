@@ -1,4 +1,8 @@
-# remaCor 0.0.19
+# remaCor 0.0.20
+ - Aug 4, 2025
+ - in `LS.empirical()` add parameter, \code{useGamma} to disable gamma approx of empirical distribution of test statistics
+
+ # remaCor 0.0.19
  - Feb 27, 2024
  - in `RE2C()` return QE, QEp, Isq, etc even when correlation is not diagonal
 
