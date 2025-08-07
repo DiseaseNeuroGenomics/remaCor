@@ -65,7 +65,7 @@ get_stat_samples3 = function(V, nu, n.mc.samples, seed){
 #  
 # @param LS.stat observed Lin-Sullivan statistic reported by \code{LS()}
 # @param V variance-covariance matrix
-# @param nu degrees of freedom
+# @param nu residual degrees of freedom
 # @param n.mc.samples number of Monte Carlo samples
 #  
 #' @importFrom EnvStats egamma
@@ -99,13 +99,17 @@ get_stat_samples3 = function(V, nu, n.mc.samples, seed){
 #' @param beta regression coefficients from each analysis
 #' @param stders standard errors corresponding to betas
 #' @param cor correlation matrix between of test statistics.  Default considers uncorrelated test statistics 
-#' @param nu degrees of freedom
+#' @param nu residual degrees of freedom
 #' @param n.mc.samples number of Monte Carlo samples
 #' @param seed random seed so results are reproducable
-#' @param useGamma if \code{TRUE}, use gamma approximation to fit empirical distribution of test statistics and compute p-value.  if \code{FALSE}, report p-value as \code{(1 + sum(obs > stat)) / (length(stat)+1)}.  Using \code{TRUE} allows computation of small p-values with fewer Monte Carlo samples. 
+#' @param useGamma if \code{TRUE}, use gamma approximation to fit empirical distribution of test statistics and compute p-value.  Ff \code{FALSE}, report p-value as \code{(1 + sum(obs > stat)) / (length(stat)+1)}.  Using \code{TRUE} allows computation of small p-values with fewer Monte Carlo samples. 
 #' 
 #' @details The theoretical null for the Lin-Sullivan statistic for fixed effects meta-analysis is chisq when the regression coefficients are estimated from a large sample size. But for finite sample size, this null distribution is not well characterized. In this case, we are not aware of a closed from cumulative distribution function.  Instead we draw covariance matrices from a Wishart distribution, sample coefficients from a multivariate normal with this covariance, and then compute the Lin-Sullivan statistic.  A gamma distribution is then fit to these  draws from the null distribution and a p-value is computed from the cumulative distribution function of this gamma.
 #'
+#' @references{
+#'   \insertRef{hoffman2025}{remaCor}
+#' }
+#
 #' @examples
 #' library(clusterGeneration)
 #' library(mvtnorm)

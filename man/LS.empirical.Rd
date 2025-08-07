@@ -21,13 +21,13 @@ LS.empirical(
 
 \item{cor}{correlation matrix between of test statistics.  Default considers uncorrelated test statistics}
 
-\item{nu}{degrees of freedom}
+\item{nu}{residual degrees of freedom}
 
 \item{n.mc.samples}{number of Monte Carlo samples}
 
 \item{seed}{random seed so results are reproducable}
 
-\item{useGamma}{if \code{TRUE}, use gamma approximation to fit empirical distribution of test statistics and compute p-value.  if \code{FALSE}, report p-value as \code{(1 + sum(obs > stat)) / (length(stat)+1)}.  Using \code{TRUE} allows computation of small p-values with fewer Monte Carlo samples.}
+\item{useGamma}{if \code{TRUE}, use gamma approximation to fit empirical distribution of test statistics and compute p-value.  Ff \code{FALSE}, report p-value as \code{(1 + sum(obs > stat)) / (length(stat)+1)}.  Using \code{TRUE} allows computation of small p-values with fewer Monte Carlo samples.}
 }
 \description{
 Fixed effect meta-analysis for correlated test statistics using the Lin-Sullivan method using Monte Carlo draws from the null distribution to compute the p-value.
@@ -76,6 +76,11 @@ LS(df$beta, df$se, C)
 # Gives properly calibrated p-values
 # nu is the residual degrees of freedom from the model fit
 LS.empirical(df$beta, df$se, C, nu=n-2)
+}
+\references{
+{
+  \insertRef{hoffman2025}{remaCor}
+}
 }
 \seealso{
 \code{LS()}
